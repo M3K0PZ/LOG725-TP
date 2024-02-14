@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwj5hpk513dkk"]
+
+[ext_resource type="Texture2D" uid="uid://r6kcgd2wmg7g" path="res://assets/red.png" id="1_2gpqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlta0"]
+size = Vector2(96, 96)
+
+[node name="RedWall" type="StaticBody2D"]
+metadata/Color = "Red"
+
+[node name="Red" type="Sprite2D" parent="."]
+texture = ExtResource("1_2gpqc")
+metadata/Color = "Red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tlta0")

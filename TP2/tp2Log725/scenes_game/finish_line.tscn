@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhs0lyqpvv20r"]
+
+[ext_resource type="Texture2D" uid="uid://ojw7w6m1e23g" path="res://assets/crossed-racing-flag-in-pixel-art-style-vector.jpg" id="1_mc1qu"]
+[ext_resource type="Script" path="res://scenes_game/finish_line.gd" id="1_stul4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_240kc"]
+size = Vector2(1954.08, 1963.14)
+
+[node name="FinishLine" type="Area2D"]
+position = Vector2(-2.84217e-14, -5.96046e-08)
+scale = Vector2(0.0440104, 0.0463542)
+script = ExtResource("1_stul4")
+
+[node name="Crossed-racing-flag-in-pixel-art-style-vector" type="Sprite2D" parent="."]
+texture = ExtResource("1_mc1qu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.45795e-13, 1.90735e-06)
+shape = SubResource("RectangleShape2D_240kc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

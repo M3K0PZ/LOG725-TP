@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctqar3jqwc7wt"]
+
+[ext_resource type="Texture2D" uid="uid://bel2sxjb3arb" path="res://Scene_start/tank.jpg" id="1_y48mw"]
+[ext_resource type="Texture2D" uid="uid://dg4gmlfd8d711" path="res://Scene_start/UI_Flat_Button_Medium_Release_02a3.png" id="2_l7jak"]
+[ext_resource type="Script" path="res://Scene_start/Button.gd" id="3_keihj"]
+[ext_resource type="Script" path="res://Scene_start/QuitButton.gd" id="4_sefnw"]
+[ext_resource type="AudioStream" uid="uid://c0f4ota50fiot" path="res://assets/sounds/battle-ship-111902.mp3" id="5_uql3l"]
+[ext_resource type="Script" path="res://scenes_game/AudioStreamPlayer2D.gd" id="6_kk43r"]
+[ext_resource type="PackedScene" uid="uid://dghp3pquoe2gu" path="res://sound_button.tscn" id="7_8cb2v"]
+
+[node name="StartScreen" type="Node2D"]
+
+[node name="Tank" type="Sprite2D" parent="."]
+position = Vector2(579.25, 324)
+scale = Vector2(2.14722, 2.12778)
+texture = ExtResource("1_y48mw")
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 513.0
+offset_top = 205.0
+offset_right = 569.0
+offset_bottom = 236.0
+scale = Vector2(2.19794, 2.19794)
+action_mode = 0
+texture_normal = ExtResource("2_l7jak")
+script = ExtResource("3_keihj")
+
+[node name="Label" type="Label" parent="StartButton"]
+modulate = Color(0, 0.109804, 0.25098, 1)
+layout_mode = 0
+offset_left = 4.54972
+offset_top = 1.36492
+offset_right = 52.5497
+offset_bottom = 24.3649
+scale = Vector2(1.11523, 1.14074)
+text = "START"
+vertical_alignment = 1
+uppercase = true
+
+[node name="QuitButton" type="TextureButton" parent="."]
+offset_left = 551.0
+offset_top = 286.0
+offset_right = 615.0
+offset_bottom = 326.0
+texture_normal = ExtResource("2_l7jak")
+script = ExtResource("4_sefnw")
+
+[node name="Label" type="Label" parent="QuitButton"]
+modulate = Color(0.0470588, 0.129412, 0.223529, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 26.0
+text = "QUIT"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uql3l")
+script = ExtResource("6_kk43r")
+
+[node name="Node2D" parent="." instance=ExtResource("7_8cb2v")]
+offset_left = 1068.0
+offset_top = 13.0
+offset_right = 1086.0
+offset_bottom = 29.0
+scale = Vector2(3.64, 3.64)
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]

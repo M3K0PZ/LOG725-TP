@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5lqis3jsulwv"]
+
+[ext_resource type="Texture2D" uid="uid://wojjrhqg07lw" path="res://assets/tank.png" id="1_mlws2"]
+[ext_resource type="Script" path="res://scenes_game/tank.gd" id="1_v04n5"]
+[ext_resource type="AudioStream" uid="uid://ri0a5farfi00" path="res://assets/sounds/bang.mp3" id="3_6qoj5"]
+[ext_resource type="Script" path="res://scenes_game/TankSounds.gd" id="4_hp3vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scqae"]
+size = Vector2(68, 46)
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_v04n5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_mlws2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_scqae")
+
+[node name="Canon_Node" type="Node2D" parent="."]
+
+[node name="Barrel" type="Node2D" parent="Canon_Node"]
+position = Vector2(40, 0)
+
+[node name="TankSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6qoj5")
+volume_db = -10.0
+script = ExtResource("4_hp3vr")

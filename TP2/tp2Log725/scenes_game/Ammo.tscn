@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://lij4ta67ohxy"]
+
+[ext_resource type="Texture2D" uid="uid://cgem50bh1xs5t" path="res://assets/ammo_crate.png" id="1_dxtp3"]
+[ext_resource type="Script" path="res://scenes_game/Ammo.gd" id="1_fnpcd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smv61"]
+radius = 32.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_fnpcd")
+AmmoType = "Blue_Ammo"
+
+[node name="AmmoCrate" type="Sprite2D" parent="."]
+position = Vector2(529, 55)
+scale = Vector2(0.0654057, 0.065048)
+texture = ExtResource("1_dxtp3")
+metadata/Ammo_Type = "Blue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(528, 56)
+shape = SubResource("CircleShape2D_smv61")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

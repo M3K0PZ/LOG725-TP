@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6yjsw65cc8hx"]
+
+[ext_resource type="Texture2D" uid="uid://bewuptel845wt" path="res://assets/green.png" id="1_ee16p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cys6y"]
+size = Vector2(96, 96)
+
+[node name="GreenWall" type="StaticBody2D"]
+metadata/Color = "Green"
+
+[node name="Green" type="Sprite2D" parent="."]
+texture = ExtResource("1_ee16p")
+metadata/Color = "Green"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cys6y")

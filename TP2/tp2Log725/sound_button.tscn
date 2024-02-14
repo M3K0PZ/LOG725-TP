@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dghp3pquoe2gu"]
+
+[ext_resource type="Texture2D" uid="uid://dj6qj0fehtwlo" path="res://assets/sound_on.png" id="1_s02pj"]
+[ext_resource type="Texture2D" uid="uid://bbhi583sf1uk4" path="res://assets/sound_off.png" id="2_f7byq"]
+[ext_resource type="Script" path="res://Node2D.gd" id="2_yxfry"]
+
+[node name="Node2D" type="TextureButton"]
+offset_right = 18.0
+offset_bottom = 16.0
+toggle_mode = true
+texture_normal = ExtResource("1_s02pj")
+texture_pressed = ExtResource("2_f7byq")
+script = ExtResource("2_yxfry")
