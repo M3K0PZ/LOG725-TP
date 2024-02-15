@@ -410,6 +410,7 @@ Ammo_type = "Blue_bullet"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_e21gd")
+volume_db = -15.0
 script = ExtResource("13_hxhbb")
 
 [node name="AudioListener" type="Node2D" parent="."]

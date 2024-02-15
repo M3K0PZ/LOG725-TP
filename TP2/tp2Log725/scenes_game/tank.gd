@@ -90,12 +90,15 @@ func Add_bullet(Name : String):
 		"Red_Ammo":
 			#print("Red ammo Added")
 			Red_bullet+=1
+			emit_signal("Ball_count_updated", "Red_bullet", Red_bullet)
 		"Green_Ammo":
 			#print("Green ammo Added")
 			Green_bullet+=1
+			emit_signal("Ball_count_updated", "Green_bullet", Green_bullet)
 		"Blue_Ammo":
 			#print("Blue ammo Added")
 			Blue_bullet+=1
+			emit_signal("Ball_count_updated", "Blue_bullet", Blue_bullet)
 		_:
 			printerr("Error, no ammo type known, tank.gd")
 			

@@ -57,6 +57,7 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_uql3l")
+volume_db = -10.0
 script = ExtResource("6_kk43r")
 
 [node name="Node2D" parent="." instance=ExtResource("7_8cb2v")]
