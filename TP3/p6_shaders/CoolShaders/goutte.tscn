@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ajiyp4ta7m7"]
+
+[ext_resource type="Shader" path="res://Shader5/color_transformation.gdshader" id="1_vsw4n"]
+[ext_resource type="Texture2D" uid="uid://dllk3imandarc" path="res://assets/blob.png" id="1_xa5e3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0v25"]
+shader = ExtResource("1_vsw4n")
+
+[node name="Arbre" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_v0v25")
+position = Vector2(303.375, 167)
+scale = Vector2(1.98089, 2.23333)
+texture = ExtResource("1_xa5e3")
